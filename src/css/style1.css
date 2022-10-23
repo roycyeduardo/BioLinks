@@ -1,0 +1,58 @@
+body {
+    /* background-image: url("../img/background1.jpg"); */
+    background-image: linear-gradient(to right, #838383, #000000);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(100%);
+
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#perfil img {
+    position: center;
+    width: 150px;
+    margin: 40px auto 20px;
+    border-radius: 50%;
+    border: 2px inset #ffffff;
+}
+#perfil a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18pt;
+}
+
+#links a {
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    color: #ffffff;
+    max-width: 300px;
+    width: auto;
+    display: block;
+    margin: 20px auto;
+    padding: 15px 90px;
+    font-size: 15pt;
+    text-decoration: none;
+}
+#links a:hover {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    color: #000000;
+    max-width: 300px;
+    width: auto;
+    display: block;
+    margin: 20px auto;
+    padding: 15px 90px;
+    font-size: 15pt;
+    text-decoration: none;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12pt;
+}

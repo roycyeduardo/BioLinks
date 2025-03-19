@@ -1,0 +1,22 @@
+[
+    {
+        "CATEGORIA": "Redes Sociais",
+        "LINKS": [
+            {
+                "URL": "https://www.linkedin.com/in/roycyeduardo",
+                "ICONE": "fab fa-linkedin",
+                "TEXTO": "LINKEDIN"
+            },
+            {
+                "URL": "https://www.github.com/roycyeduardo",
+                "ICONE": "fab fa-github",
+                "TEXTO": "GITHUB"
+            },
+            {
+                "URL": "https://www.instagram.com/roycyofc",
+                "ICONE": "fab fa-instagram",
+                "TEXTO": "INSTAGRAM"
+            }
+        ]
+    }
+]

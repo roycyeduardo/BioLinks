@@ -1,34 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Bio - Roycy</title>
-        <link rel="icon" href="src/img/Logo1.png">
+    <title>BioLinks</title>
 
-        <link rel="stylesheet" href="src/css/style1.css"/>
-        <script src="src/javascript/index.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    </head>
-    <body>
-        <div id="perfil">
-            <img src="src/img/FotoPerfil.jpg"><br>
-            <a href=""><b>@roycy</b></a>
-        </div>
-        
-        <div id="links">
-            <a href="https://www.linkedin.com/in/roycy-eduardo-372663253"><i class="fab fa-linkedin">&nbsp;</i> LINKEDIN</a>
-            <a href="https://www.github.com/roycyeduardo"><i class="fab fa-github">&nbsp;</i> GITHUB</a>
-            <a href="https://www.instagram.com/roycyofc"><i class="fab fa-instagram">&nbsp;</i> INSTAGRAM</a>
-            <a href="https://www.youtube.com/channel/UCCsAce_V0D2lqjKgALVU9KQ"><i class="fab fa-youtube">&nbsp;</i> YOUTUBE</a>
-            <a href="https://www.twitch.tv/roycye"><i class="fab fa-twitch">&nbsp;</i> TWITCH</a>
-        </div>
+    <link rel="stylesheet" href="src/css/style1.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+<body>
+    <div id="perfil">
+        <img id="perfil-foto" src="" alt="Foto de Perfil"><br>
+        <a id="perfil-nome" href=""></a>
+        <p id="perfil-descricao"></p>
+    </div>
 
-        <footer>
-            <br>
-            <a href=""><b>Feito por Roycy © Todos os direitos</b></a>
-        </footer>
-    </body>
+    <div id="links"></div>
+
+    <footer>
+        <br>
+        <a id="footer-texto" href="#">Feito por Roycy © Todos os direitos</a>
+    </footer>
+
+    <script>
+        async function carregarDados() {
+            const usuarioResponse = await fetch('./src/json/usuario.json');
+            const usuario = await usuarioResponse.json();
+
+            document.getElementById('perfil-foto').src = usuario.FOTO;
+            document.getElementById('perfil-nome').textContent = usuario.NOME;
+            document.getElementById('perfil-nome').href = usuario.LINK;
+            document.getElementById('perfil-descricao').textContent = usuario.DESCRICAO;
+
+            document.title = "BioLinks - " + usuario.NOME;
+
+            const linksResponse = await fetch('./src/json/links.json');
+            const categorias = await linksResponse.json();
+
+            const linksDiv = document.getElementById('links');
+            categorias.forEach(categoria => {
+                const categoriaDiv = document.createElement('div');
+                const categoriaTitulo = document.createElement('h2');
+                categoriaTitulo.textContent = categoria.CATEGORIA;
+                categoriaDiv.appendChild(categoriaTitulo);
+
+                categoria.LINKS.forEach(link => {
+                    const a = document.createElement('a');
+                    a.href = link.URL;
+                    a.innerHTML = `<i class="${link.ICONE}"></i> ${link.TEXTO}`;
+                    categoriaDiv.appendChild(a);
+                });
+
+                linksDiv.appendChild(categoriaDiv);
+            });
+        }
+
+        carregarDados();
+    </script>
+</body>
 </html>

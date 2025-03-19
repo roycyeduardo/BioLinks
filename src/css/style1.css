@@ -1,58 +1,106 @@
 body {
-    /* background-image: url("../img/background1.jpg"); */
-    background-image: linear-gradient(to right, #838383, #000000);
+    background: linear-gradient(to right, #333, #111);
     background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    backdrop-filter: blur(100%);
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
 
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+#perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
 }
 
 #perfil img {
-    position: center;
-    width: 150px;
-    margin: 40px auto 20px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 2px inset #ffffff;
+    object-fit: cover;
+    border: 2px solid #555;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 #perfil a {
-    color: #ffffff;
+    color: #ddd;
     text-decoration: none;
-    font-size: 18pt;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#links {
+    width: 90%;
+    max-width: 400px;
 }
 
 #links a {
-    background-color: #000000;
-    border: 2px solid #ffffff;
-    border-radius: 30px;
-    color: #ffffff;
-    max-width: 300px;
-    width: auto;
     display: block;
-    margin: 20px auto;
-    padding: 15px 90px;
-    font-size: 15pt;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: #eee;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    text-align: center;
     text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 1rem;
 }
+
 #links a:hover {
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 30px;
-    color: #000000;
-    max-width: 300px;
-    width: auto;
-    display: block;
-    margin: 20px auto;
-    padding: 15px 90px;
-    font-size: 15pt;
-    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+#links div h2 {
+    text-align: center;
+    margin: 30px 0 15px;
+    color: #eee;
+    font-size: 1.3rem;
+    font-weight: 600; 
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px; 
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
 }
 
 footer a {
-    color: #ffffff;
+    color: #aaa;
     text-decoration: none;
-    font-size: 12pt;
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 600px) {
+    #perfil img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #perfil a {
+        font-size: 1rem;
+    }
+
+    #links a {
+        font-size: 0.9rem;
+        padding: 12px 15px;
+    }
+
+    footer a {
+        font-size: 0.8rem;
+    }
 }
